@@ -1,3 +1,4 @@
+import RegistrationForm from "./RegistrationForm";
 import SocialButton from "./SocialButton";
 
 const Registration = ({
@@ -5,13 +6,14 @@ const Registration = ({
     fbIcon,
     ghIcon,
     liIcon,
-    mailAlternative,
+    emailAlternative,
 }) => {
     return (
         <>
             <h2>{createAccount}</h2>
             <SocialButton fbIcon={fbIcon} ghIcon={ghIcon} liIcon={liIcon} />
-            <p>{mailAlternative}</p>
+            <p>{emailAlternative}</p>
+            <RegistrationForm />
         </>
     );
 };
