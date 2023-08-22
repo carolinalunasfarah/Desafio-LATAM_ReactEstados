@@ -1,8 +1,8 @@
-const Alert = ({ success, error }) => {
+const Alert = ({ success, invalid }) => {
     return (
         <>
             <p>{success}</p>
-            <p>{error}</p>
+            <p>{invalid}</p>
         </>
     );
 };

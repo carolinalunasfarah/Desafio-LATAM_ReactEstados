@@ -2,14 +2,17 @@ import { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Alert from "./Alert";
 
-
-const RegistrationForm = () => {
+const RegistrationForm = ({ success, invalid }) => {
     // form states
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+
+    // error state
+    const [error, setError] = useState(false);
 
     // data validation
     const validateData = (e) => {
@@ -69,9 +72,11 @@ const RegistrationForm = () => {
                         value={confirmPassword}
                     />
                 </Form.Group>
-                <Button class="secondary" type="submit">
+                <Button class="secondary m-2" type="submit">
                     Sign in
                 </Button>
+                <Alert />
+                {error ? <p>{success}</p> : <p>{invalid}</p>}
             </form>
         </>
     );

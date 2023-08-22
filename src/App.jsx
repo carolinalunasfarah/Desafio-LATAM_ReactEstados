@@ -15,6 +15,8 @@ function App() {
                         ghIcon="fa-brands fa-github fa-3x"
                         liIcon="fa-brands fa-linkedin fa-3x"
                         emailAlternative="Or use your email to register"
+                        success="Yay"
+                        invalid="Nope"
                     />
                 </section>
             </main>

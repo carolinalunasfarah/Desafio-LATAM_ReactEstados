@@ -7,13 +7,15 @@ const Registration = ({
     ghIcon,
     liIcon,
     emailAlternative,
+    success,
+    invalid
 }) => {
     return (
         <>
             <h2>{createAccount}</h2>
             <SocialButton fbIcon={fbIcon} ghIcon={ghIcon} liIcon={liIcon} />
             <p>{emailAlternative}</p>
-            <RegistrationForm />
+            <RegistrationForm success={success} invalid = {invalid}/>
         </>
     );
 };
