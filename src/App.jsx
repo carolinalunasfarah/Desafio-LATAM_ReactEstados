@@ -8,8 +8,12 @@ function App() {
     return (
         <>
             <main>
-                <section className="registration-container">
-                    <Registration />
+                <section className="registrationContainer">
+                    <Registration
+                        fbIcon="fa-brands fa-facebook"
+                        ghIcon="fa-brands fa-github"
+                        liIcon="fa-brands fa-linkedin"
+                    />
                 </section>
             </main>
         </>

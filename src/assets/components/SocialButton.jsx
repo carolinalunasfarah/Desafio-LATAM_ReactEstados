@@ -1,6 +1,10 @@
-const SocialButton = () => {
+const SocialButton = ({ fbIcon, ghIcon, liIcon}) => {
   return (
-    <div>SocialButton</div>
+   <>
+      <i class= {fbIcon}></i>
+      <i class= {ghIcon}></i>
+      <i class= {liIcon}></i>
+   </> 
   )
 }
 

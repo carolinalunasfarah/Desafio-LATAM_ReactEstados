@@ -1,7 +1,11 @@
-const Registration = () => {
-  return (
-    <div>Registration</div>
-  )
-}
+import SocialButton from "./SocialButton";
 
-export default Registration
+const Registration = ({ fbIcon, ghIcon, liIcon }) => {
+    return (
+        <>
+            <SocialButton fbIcon={fbIcon} ghIcon={ghIcon} liIcon={liIcon} />
+        </>
+    );
+};
+
+export default Registration;
