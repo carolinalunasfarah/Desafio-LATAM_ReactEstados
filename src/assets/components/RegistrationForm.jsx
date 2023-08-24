@@ -2,32 +2,42 @@ import { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Alert from "./Alert";
 
-const RegistrationForm = ({ success, invalid }) => {
+const RegistrationForm = ({ setAlert }) => {
     // form states
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    // error state
-    const [error, setError] = useState(false);
-
     // data validation
     const validateData = (e) => {
         e.prevent.default();
 
-        if (
-            name.trim === "" ||
-            email.trim === "" ||
-            password.trim === "" ||
-            confirmPassword.trim === ""
-        ) {
-            setError(true);
+        const validateFormGroups =
+            !name || !email || !password || !confirmPassword;
+        const validatePassword = password === confirmPassword;
+
+        validateFormGroups
+            ? setAlert({
+                  error: true,
+                  msg: "You need to enter all data",
+                  color: "primary",
+              })
+            : setAlert({
+                  error: false,
+                  msg: "You successfully sign in",
+                  color: "secondary",
+              });
+
+        if (validatePassword) {
+            setAlert({
+                error: true,
+                msg: "Passwords doesn't match",
+                color: "primary",
+            });
             return;
         }
-        setError(false);
     };
 
     return (
@@ -72,11 +82,13 @@ const RegistrationForm = ({ success, invalid }) => {
                         value={confirmPassword}
                     />
                 </Form.Group>
-                <Button class="secondary m-2" type="submit">
+                <Button
+                    variant="warning"
+                    size="lg"
+                    type="submit"
+                    className="m-2 fw-bold submitBtn">
                     Sign in
                 </Button>
-                <Alert />
-                {error ? <p>{success}</p> : <p>{invalid}</p>}
             </form>
         </>
     );

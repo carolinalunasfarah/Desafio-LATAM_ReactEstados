@@ -11,12 +11,42 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: violet;
+    background-color: rgba(154, 71, 231, 0.5);
     min-width: 25rem;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 15%;
+}
+
+h2:hover {
+    cursor: none;
+}
+p:hover {
+    cursor: none;
+}
+.text-muted:hover {
+    cursor: none;
 }
 
 .fa-brands {
     padding: 1rem 2rem;
+}
+.fa-brands:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: ease 1.5s;
+}
+
+.fa-facebook:hover {
+    color: blue;
+}
+.fa-github:hover {
+    color: white;
+}
+.fa-linkedin:hover {
+    color: rgb(4, 4, 167);
+}
+
+.submitBtn:hover {
+    transform: scale(1.25);
+    transition: ease 2s;
 }
