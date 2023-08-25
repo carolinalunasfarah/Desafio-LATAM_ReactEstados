@@ -4,7 +4,7 @@ import RegistrationForm from "./RegistrationForm";
 import SocialButton from "./SocialButton";
 import Alert from "./Alert";
 
-const Registration = ({ createAccount, emailAlternative, color, msg }) => {
+const Registration = ({ createAccount, emailAlternative }) => {
     const [alert, setAlert] = useState({
         error: "",
         msg: "",
@@ -22,7 +22,7 @@ const Registration = ({ createAccount, emailAlternative, color, msg }) => {
             <p>{emailAlternative}</p>
 
             <RegistrationForm setAlert={setAlert} />
-            {msg && <Alert color={color}>{msg}</Alert>}
+            {alert.msg && <Alert color={alert.color}>{alert.msg}</Alert>}
         </>
     );
 };

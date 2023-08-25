@@ -16,7 +16,7 @@ const RegistrationForm = ({ setAlert }) => {
 
         const validateFormGroups =
             !name || !email || !password || !confirmPassword;
-        const validatePassword = password === confirmPassword;
+        const validatePassword = password !== confirmPassword;
 
         validateFormGroups
             ? setAlert({
@@ -38,6 +38,11 @@ const RegistrationForm = ({ setAlert }) => {
             });
             return;
         }
+
+        setName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
     };
 
     return (
@@ -73,7 +78,9 @@ const RegistrationForm = ({ setAlert }) => {
                         value={password}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group
+                    className="mb-3"
+                    controlId="formBasicConfirmPassword">
                     <Form.Control
                         type="password"
                         name="confirmPassword"

@@ -1,8 +1,9 @@
-const Alert = ({ color, msg }) => {
+import Badge from "react-bootstrap/Badge";
 
+const Alert = ({ color, msg }) => {
     return (
         <>
-            <p variant={color}>{msg}</p>
+            <Badge bg={color}>{msg}</Badge>
         </>
     );
 };
