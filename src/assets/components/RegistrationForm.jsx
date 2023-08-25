@@ -12,7 +12,7 @@ const RegistrationForm = ({ setAlert }) => {
 
     // data validation
     const validateData = (e) => {
-        e.prevent.default();
+        e.preventDefault();
 
         const validateFormGroups =
             !name || !email || !password || !confirmPassword;
