@@ -3,7 +3,11 @@ import Badge from "react-bootstrap/Badge";
 const Alert = ({ children, color }) => {
     return (
         <>
-            <Badge bg={color}>{children}</Badge>
+            <p className="alertDisplay">
+                <Badge bg={color}>
+                    {children}
+                </Badge>
+            </p>
         </>
     );
 };
