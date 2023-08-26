@@ -22,19 +22,19 @@ const RegistrationForm = ({ setAlert }) => {
             ? setAlert({
                   error: true,
                   msg: "You need to enter all data",
-                  color: "primary",
+                  color: "danger",
               })
             : setAlert({
                   error: false,
                   msg: "You successfully sign in",
-                  color: "secondary",
+                  color: "success",
               });
 
         if (validatePassword) {
             setAlert({
                 error: true,
                 msg: "Passwords doesn't match",
-                color: "primary",
+                color: "warning",
             });
             return;
         }
