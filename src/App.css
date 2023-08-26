@@ -50,3 +50,9 @@ p:hover {
     transform: scale(1.25);
     transition: ease 2s;
 }
+
+.alertDisplay{
+    margin-top: 1rem;
+    height: 2rem;
+    font-size: 20px;
+}
